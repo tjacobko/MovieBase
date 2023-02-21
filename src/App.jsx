@@ -10,13 +10,13 @@ function App() {
     fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${key}`)
       .then(res => res.json())
       .then(data => setMovieData(data.results))
-
-    movieData && console.log(movieData)
   }, [])
   
+  movieData && console.log(movieData)
+
   return (
     <div>
-      {movieData && <MovieCard title={movieData[0].title} />}
+      {movieData && <MovieCard movies={movieData} />}
     </div>
   )
 }
