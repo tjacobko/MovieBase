@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import MovieCard from './components/MovieCard'
+import MovieCards from './components/MovieCards'
 
 function App() {
   const [movieData, setMovieData] = useState()
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div>
-      {movieData && <MovieCard movies={movieData} />}
+      {movieData && <MovieCards movies={movieData} />}
     </div>
   )
 }
