@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Header from './components/Header'
 import MovieCards from './components/MovieCards'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       {movieData && <MovieCards movies={movieData} />}
     </div>
   )

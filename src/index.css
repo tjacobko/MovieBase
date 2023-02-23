@@ -1,8 +1,22 @@
 body {
   margin: 15px;
-  background-color: darkslategray;
+  background-color: #2F2235;
   color: whitesmoke;
   font-family: 'Inter', sans-serif, system-ui, Helvetica, Arial;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title {
+  background-color: #A9ACA9;
+  margin-left: 30px;
+  margin-right: 40px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .movieCard {
@@ -10,5 +24,5 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid yellow;
+  border: 1px solid #60495A;
 }
