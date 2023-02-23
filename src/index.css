@@ -39,17 +39,27 @@ header {
   border-top-right-radius: var(--radius);
 }
 
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  border: 2px solid white;
+}
+
+.movieCard-rating {
+  grid-area: 1 / 1 / 3 / 2;
+  width: 80px;
+  height: 80px;
+}
+
 .movieCard-title {
+  grid-area: 1 / 2 / 2 / 3;
   font-size: 30px;
 }
 
 .movieCard-popularity {
+  grid-area: 2 / 2 / 3 / 3;
   font-size: 18px;
-}
-
-.movieCard-rating {
-  width: 80px;
-  height: 80px;
 }
 
 .block {

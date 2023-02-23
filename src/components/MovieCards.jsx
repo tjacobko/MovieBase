@@ -20,16 +20,18 @@ export default function MovieCards(props) {
         return (
             <div className="movieCard" key={nanoid()}>
                 <img className="movieCard-img" src={`${base_url + size + movie.backdrop_path}`} />
-                <div className="movieCard-rating">
-                    <CircularProgressbar
-                        strokeWidth={12}
-                        styles={buildStyles({textSize: "22px"})}
-                        value={percentage(movie.vote_average)}
-                        text={`${percentage(movie.vote_average)}%`}
-                    />
+                <div className="info-grid">    
+                    <div className="movieCard-rating">
+                        <CircularProgressbar
+                            strokeWidth={12}
+                            styles={buildStyles({textSize: "22px"})}
+                            value={percentage(movie.vote_average)}
+                            text={`${percentage(movie.vote_average)}%`}
+                        />
+                    </div>
+                    <h1 className="movieCard-title">{movie.title}</h1>
+                    <h3 className="movieCard-popularity">Popularity: {roundTwoDecimals(movie.popularity)}</h3>
                 </div>
-                <h1 className="movieCard-title">{movie.title}</h1>
-                <h3 className="movieCard-popularity">Popularity: {roundTwoDecimals(movie.popularity)}</h3>
             </div>
         )
     })
