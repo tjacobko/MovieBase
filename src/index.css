@@ -9,6 +9,8 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 15px;
+  background-color: #3F3244;
 }
 
 .title {
@@ -25,4 +27,20 @@ header {
   flex-direction: column;
   align-items: center;
   border: 1px solid #60495A;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-title {
+  margin-left: 15px;
+}
+
+.block-list {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  /* white-space: nowrap; */
 }
