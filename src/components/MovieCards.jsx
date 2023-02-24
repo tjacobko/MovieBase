@@ -30,11 +30,17 @@ export default function MovieCards(props) {
                         />
                     </div>
                     <div className="movieCard-title">
-                        <p>{movie.title}</p>
+                        <p className="movieCard-info-text">{movie.title}</p>
                     </div>
                     <div className="movieCard-info">
-                        <p className="movieCard-info-text">Release Date: {movie.release_date}</p>
-                        <p className="movieCard-info-text">Popularity: {roundTwoDecimals(movie.popularity)}</p>
+                        <p className="movieCard-info-text">
+                            <span className="movieCard-info-text-bold">Release Date: </span>
+                            {movie.release_date}
+                        </p>
+                        <p className="movieCard-info-text">
+                            <span className="movieCard-info-text-bold">Popularity: </span>
+                            {roundTwoDecimals(movie.popularity)}
+                        </p>
                     </div>
                 </div>
             </div>
