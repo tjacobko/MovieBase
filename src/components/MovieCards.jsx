@@ -29,8 +29,13 @@ export default function MovieCards(props) {
                             text={`${percentage(movie.vote_average)}%`}
                         />
                     </div>
-                    <h1 className="movieCard-title">{movie.title}</h1>
-                    <h3 className="movieCard-popularity">Popularity: {roundTwoDecimals(movie.popularity)}</h3>
+                    <div className="movieCard-title">
+                        <p>{movie.title}</p>
+                    </div>
+                    <div className="movieCard-info">
+                        <p className="movieCard-info-text">Release Date: {movie.release_date}</p>
+                        <p className="movieCard-info-text">Popularity: {roundTwoDecimals(movie.popularity)}</p>
+                    </div>
                 </div>
             </div>
         )
