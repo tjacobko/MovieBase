@@ -4,7 +4,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import '../index.css'
 import 'react-circular-progressbar/dist/styles.css'
 
-export default function MovieCards(props) {
+export default function ShowCards(props) {
     function roundTwoDecimals(num) {
         return Math.round((num + Number.EPSILON)*100)/100
     }
@@ -15,30 +15,30 @@ export default function MovieCards(props) {
 
     const base_url = props.config.base_url
     const size = props.config.backdrop_sizes[0]
-    const movieMap = props.movies.map(movie => {
+    const showMap = props.shows.map(show => {
         return (
             <div className="movieCard" key={nanoid()}>
-                <img className="movieCard-img" src={`${base_url + size + movie.backdrop_path}`} />
+                <img className="movieCard-img" src={`${base_url + size + show.backdrop_path}`} />
                 <div className="info-grid">    
                     <div className="movieCard-rating">
                         <CircularProgressbar
                             strokeWidth={12}
                             styles={buildStyles({textSize: "22px"})}
-                            value={percentage(movie.vote_average)}
-                            text={`${percentage(movie.vote_average)}%`}
+                            value={percentage(show.vote_average)}
+                            text={`${percentage(show.vote_average)}%`}
                         />
                     </div>
                     <div className="movieCard-title">
-                        <p className="movieCard-info-text">{movie.title}</p>
+                        <p className="movieCard-info-text">{show.name}</p>
                     </div>
                     <div className="movieCard-info">
                         <p className="movieCard-info-text">
                             <span className="movieCard-info-text-type">Release Date:</span>
-                            {" " + new Date(movie.release_date).toDateString()}
+                            {" " + new Date(show.release_date).toDateString()}
                         </p>
                         <p className="movieCard-info-text">
                             <span className="movieCard-info-text-type">Popularity:</span>
-                            {" " + roundTwoDecimals(movie.popularity)}
+                            {" " + roundTwoDecimals(show.popularity)}
                         </p>
                     </div>
                 </div>
@@ -48,9 +48,9 @@ export default function MovieCards(props) {
     
     return (
         <div className="block">
-            <h2 className="block-title">Top Movies Today</h2>
+            <h2 className="block-title">Top Shows Today</h2>
             <div className="block-list">
-                {movieMap}
+                {showMap}
             </div>
         </div>
     )
