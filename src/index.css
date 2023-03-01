@@ -102,3 +102,8 @@ header {
   gap: 15px;
   overflow: auto;
 }
+
+.info-person {
+  display: flex;
+  flex-direction: column;
+}

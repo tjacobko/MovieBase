@@ -31,7 +31,7 @@ function App() {
   // movieData && console.log(movieData)
   // config && console.log(config)
   // showData && console.log(showData)
-  personData && console.log(personData)
+  // personData && console.log(personData)
 
   return (
     <div>
@@ -45,6 +45,11 @@ function App() {
         showData
         && config
         && <Cards data={showData} config={config} />
+      }
+      {
+        personData
+        && config
+        && <Cards data={personData} config={config} />
       }
     </div>
   )

@@ -18,63 +18,62 @@ export default function Cards(props) {
     }
 
     const base_url = props.config.base_url
-    const size = props.config.backdrop_sizes[0]
+    const backdrop_size = props.config.backdrop_sizes[0]
+    const profile_size = props.config.profile_sizes[1]
     const cardsMap = props.data.map(obj => {
         return (
             <div className="movieCard" key={nanoid()}>
                 {
                     mediaType==="person"
                     ?
-                    <img className="movieCard-img" src={`${base_url + size + obj.profile_path}`} />
+                    <img className="movieCard-img" src={`${base_url + profile_size + obj.profile_path}`} />
                     :
-                    <img className="movieCard-img" src={`${base_url + size + obj.backdrop_path}`} />
+                    <img className="movieCard-img" src={`${base_url + backdrop_size + obj.backdrop_path}`} />
                 }
                 {
                     mediaType==="person"
                     ?
-                    <div>
-                        
+                    <div className="info-person">
+                        <div>{obj.name}</div>
+                        <div>{obj.known_for_department}</div>
                     </div>
                     :
-                    <div>
-
-                    </div>
-                }
-                <div className="info-grid">    
-                    <div className="movieCard-rating">
-                        <CircularProgressbar
-                            strokeWidth={12}
-                            styles={buildStyles({textSize: "22px"})}
-                            value={percentage(obj.vote_average)}
-                            text={`${percentage(obj.vote_average)}%`}
-                        />
-                    </div>
-                    <div className="movieCard-title">
-                        {
-                            mediaType==="movie"
-                            ?
-                            <p className="movieCard-info-text">{obj.title}</p>
-                            :
-                            <p className="movieCard-info-text">{obj.name}</p>
-                        }
-                    </div>
-                    <div className="movieCard-info">
-                        <p className="movieCard-info-text">
-                            <span className="movieCard-info-text-type">Release Date:</span>
+                    <div className="info-grid">    
+                        <div className="movieCard-rating">
+                            <CircularProgressbar
+                                strokeWidth={12}
+                                styles={buildStyles({textSize: "22px"})}
+                                value={percentage(obj.vote_average)}
+                                text={`${percentage(obj.vote_average)}%`}
+                            />
+                        </div>
+                        <div className="movieCard-title">
                             {
                                 mediaType==="movie"
                                 ?
-                                " " + new Date(obj.release_date).toDateString()
+                                <p className="movieCard-info-text">{obj.title}</p>
                                 :
-                                " " + new Date(obj.first_air_date).toDateString()
+                                <p className="movieCard-info-text">{obj.name}</p>
                             }
-                        </p>
-                        <p className="movieCard-info-text">
-                            <span className="movieCard-info-text-type">Popularity:</span>
-                            {" " + roundTwoDecimals(obj.popularity)}
-                        </p>
+                        </div>
+                        <div className="movieCard-info">
+                            <p className="movieCard-info-text">
+                                <span className="movieCard-info-text-type">Release Date:</span>
+                                {
+                                    mediaType==="movie"
+                                    ?
+                                    " " + new Date(obj.release_date).toDateString()
+                                    :
+                                    " " + new Date(obj.first_air_date).toDateString()
+                                }
+                            </p>
+                            <p className="movieCard-info-text">
+                                <span className="movieCard-info-text-type">Popularity:</span>
+                                {" " + roundTwoDecimals(obj.popularity)}
+                            </p>
+                        </div>
                     </div>
-                </div>
+                }
             </div>
         )
     })
