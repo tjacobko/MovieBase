@@ -1,7 +1,6 @@
 import { nanoid } from 'nanoid'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 
-import '../index.css'
 import 'react-circular-progressbar/dist/styles.css'
 
 export default function Cards(props) {

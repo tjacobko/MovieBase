@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Cards from './components/Cards'
+import Footer from './components/Footer'
 
 function App() {
   const [movieData, setMovieData] = useState()
@@ -36,21 +37,22 @@ function App() {
   return (
     <div>
       <Header />
-      {
-        movieData
-        && config
-        && <Cards data={movieData} config={config} />
-      }
-      {
-        showData
-        && config
-        && <Cards data={showData} config={config} />
-      }
-      {
-        personData
-        && config
-        && <Cards data={personData} config={config} />
-      }
+        {
+          movieData
+          && config
+          && <Cards data={movieData} config={config} />
+        }
+        {
+          showData
+          && config
+          && <Cards data={showData} config={config} />
+        }
+        {
+          personData
+          && config
+          && <Cards data={personData} config={config} />
+        }
+      <Footer />
     </div>
   )
 }

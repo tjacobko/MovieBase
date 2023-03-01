@@ -104,7 +104,7 @@ header {
 }
 
 .info-person {
-  margin: 15px 8px 0 8px;
+  margin: 15px 8px;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -129,4 +129,26 @@ header {
 
 .info-person-text {
   font-weight: 500;
+}
+
+footer {
+  margin-top: 30px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: #161019;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
