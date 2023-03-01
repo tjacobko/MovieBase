@@ -27,7 +27,7 @@ header {
   font-family: 'Tilt Neon';
 }
 
-.movieCard {
+.card {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ header {
   border-radius: var(--radius);
 }
 
-.movieCard-img {
+.card-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
 }
@@ -48,13 +48,13 @@ header {
   grid-column-gap: 10px;
 }
 
-.movieCard-rating {
+.card-rating {
   grid-area: 1 / 1 / 2 / 2;
   width: 80px;
   height: 80px;
 }
 
-.movieCard-title {
+.card-title {
   grid-area: 1 / 2 / 2 / 3;
   font-size: 22px;
   font-family: var(--fonts);
@@ -64,7 +64,7 @@ header {
   font-family: 'Oswald', sans-serif;
 }
 
-.movieCard-info {
+.card-info {
   grid-area: 2 / 1 / 3 / 3;
   font-size: 16px;
   font-family: var(--fonts);
@@ -75,13 +75,13 @@ header {
   gap: 10px;
 }
 
-.movieCard-info-text {
+.card-info-text {
   margin: 0;
   font-weight: 500;
 }
 
-.movieCard-info-text-type {
-  font-weight: 800;
+.card-info-text-type {
+  font-weight: 600;
   background-color: #60495A;
   border-radius: 8px;
   padding: 2px 5px;
@@ -104,20 +104,29 @@ header {
 }
 
 .info-person {
-  margin-top: 15px;
+  margin: 15px 8px 0 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  align-items: left;
+  gap: 10px;
+}
+
+.info-person div:first-child {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .info-person-name {
   font-weight: 800;
 }
 
-.info-person-known {
-  font-weight: 700;
+.info-person-type {
+  font-weight: 600;
   background-color: #60495A;
   border-radius: 8px;
-  padding: 2px 7px;
+  padding: 2px 4px;
+}
+
+.info-person-text {
+  font-weight: 500;
 }

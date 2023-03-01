@@ -22,24 +22,35 @@ export default function Cards(props) {
     const profile_size = props.config.profile_sizes[1]
     const cardsMap = props.data.map(obj => {
         return (
-            <div className="movieCard" key={nanoid()}>
+            <div className="card" key={nanoid()}>
                 {
                     mediaType==="person"
                     ?
-                    <img className="movieCard-img" src={`${base_url + profile_size + obj.profile_path}`} />
+                    <img className="card-img" src={`${base_url + profile_size + obj.profile_path}`} />
                     :
-                    <img className="movieCard-img" src={`${base_url + backdrop_size + obj.backdrop_path}`} />
+                    <img className="card-img" src={`${base_url + backdrop_size + obj.backdrop_path}`} />
                 }
                 {
                     mediaType==="person"
                     ?
                     <div className="info-person">
                         <div className="info-person-name">{obj.name}</div>
-                        <div className="info-person-known">{obj.known_for_department}</div>
+                        <div className="info-person-text">
+                            <span className="info-person-type">
+                                Known For:
+                            </span>
+                            {" " + obj.known_for_department}
+                        </div>
+                        <div className="info-person-text">
+                            <span className="info-person-type">
+                                Popularity
+                            </span>
+                            {" " + obj.popularity}
+                        </div>
                     </div>
                     :
                     <div className="info-grid">    
-                        <div className="movieCard-rating">
+                        <div className="card-rating">
                             <CircularProgressbar
                                 strokeWidth={12}
                                 styles={buildStyles({textSize: "22px"})}
@@ -47,18 +58,18 @@ export default function Cards(props) {
                                 text={`${percentage(obj.vote_average)}%`}
                             />
                         </div>
-                        <div className="movieCard-title">
+                        <div className="card-title">
                             {
                                 mediaType==="movie"
                                 ?
-                                <p className="movieCard-info-text">{obj.title}</p>
+                                <p className="card-info-text">{obj.title}</p>
                                 :
-                                <p className="movieCard-info-text">{obj.name}</p>
+                                <p className="card-info-text">{obj.name}</p>
                             }
                         </div>
-                        <div className="movieCard-info">
-                            <p className="movieCard-info-text">
-                                <span className="movieCard-info-text-type">Release Date:</span>
+                        <div className="card-info">
+                            <p className="card-info-text">
+                                <span className="card-info-text-type">Release Date:</span>
                                 {
                                     mediaType==="movie"
                                     ?
@@ -67,8 +78,8 @@ export default function Cards(props) {
                                     " " + new Date(obj.first_air_date).toDateString()
                                 }
                             </p>
-                            <p className="movieCard-info-text">
-                                <span className="movieCard-info-text-type">Popularity:</span>
+                            <p className="card-info-text">
+                                <span className="card-info-text-type">Popularity:</span>
                                 {" " + roundTwoDecimals(obj.popularity)}
                             </p>
                         </div>
