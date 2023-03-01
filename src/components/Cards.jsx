@@ -34,8 +34,8 @@ export default function Cards(props) {
                     mediaType==="person"
                     ?
                     <div className="info-person">
-                        <div>{obj.name}</div>
-                        <div>{obj.known_for_department}</div>
+                        <div className="info-person-name">{obj.name}</div>
+                        <div className="info-person-known">{obj.known_for_department}</div>
                     </div>
                     :
                     <div className="info-grid">    
