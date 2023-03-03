@@ -29,11 +29,6 @@ function App() {
       .then(data => setConfig(data.images))
   }, [])
 
-  // movieData && console.log(movieData)
-  // config && console.log(config)
-  // showData && console.log(showData)
-  // personData && console.log(personData)
-
   return (
     <div>
       <Header />
