@@ -11,8 +11,12 @@ export default function Footer() {
             </div>
             <div className="links">
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="popularity.html">Popularity</a>
+                <a href="https://github.com/tjacobko/MovieBase">
+                    About
+                </a>
+                <a href="https://developers.themoviedb.org/3/getting-started/popularity">
+                    Popularity
+                </a>
             </div>
         </footer>
     )
